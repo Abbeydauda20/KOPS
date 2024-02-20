@@ -1,0 +1,39 @@
+
+kops create cluster \
+  --name=dorfsky.com \
+  --state=s3://myseedbkt2 \
+  --zones=us-east-1a,us-east-1b \
+  --node-count=2 \
+  --node-size=t3.small \
+  --master-size=t3.small \
+  --dns-zone=dorfsky.com  \
+  --node-volume-size=8 \
+  --master-volume-size=8
+
+#Create Cluster:
+kops create cluster \
+  --name=dorfsky.com \
+  --state=s3://myseedbkt2 \
+  --zones=us-east-1a,us-east-1b \
+  --node-count=2 \
+  --node-size=t3.small \
+  --master-size=t3.small \
+  --dns-zone=dorfsky.com  \
+  --node-volume-size=8 \
+  --master-volume-size=8
+
+#Update Cluster:
+kops update cluster --name dorfsky.com state=s3://myseedbkt2 --yes --admin
+
+#Validate Cluster
+kops validate cluster --name dorfsky.com --state s3://myseedbkt2 --yes --admin
+
+#Delete Cluster
+kops delete cluster --name=dorfsky.com --state=s3://myseedbkt2 --yes --admin
+
+
+
+
+
+
+
