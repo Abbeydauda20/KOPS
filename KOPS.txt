@@ -37,3 +37,5 @@ kops delete cluster --name=dorfsky.com --state=s3://myseedbkt2 --yes --admin
 
 
 
+
+
